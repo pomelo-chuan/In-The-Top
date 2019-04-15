@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>In The Top</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .dashboard {
+            background-color: antiquewhite;
+            width: 100%;
+            height: 200px;
+        }
+
+        .menu {
+            width: 100%;
+            height: 30px;
+            background-color: aqua;
+            /* position: sticky; */
+            /* position: -webkit-sticky; */
+            /* top: 0; */
+            /* left: 0; */
+        }
+
+        .menu-fixed {
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="dashboard">
+        Norwegian Wood
+    </div>
+    <div class="menu">
+        some menu
+    </div>
+    <div class="content">
+        <p>I once had a girl</p>
+        <p>Or should I say she once had me</p>
+        <p>She showed me her room</p>
+        <p>Isn't it good Norwegian wood?</p>
+        <p>She asked me to stay</p>
+        <p>And she told me to sit anywhere</p>
+        <p>So I looked around</p>
+        <p>And I noticed there wasn't a chair</p>
+        <p>I sat on a rug biding my time</p>
+        <p>Drinking her wine</p>
+        <p>We talked until two and then she said</p>
+        <p>"It's time for bed"</p>
+        <p>She told me she worked</p>
+        <p>In the morning and started to laugh</p>
+        <p>I told her I didn't</p>
+        <p>And crawled off to sleep in the bath</p>
+        <p>And when I awoke I was alone</p>
+        <p>This bird had flown</p>
+        <p>So I lit a fire</p>
+        <p>Isn't it good Norwegian wood?</p>
+
+        <p>I once had a girl</p>
+        <p>Or should I say she once had me</p>
+        <p>She showed me her room</p>
+        <p>Isn't it good Norwegian wood?</p>
+        <p>She asked me to stay</p>
+        <p>And she told me to sit anywhere</p>
+        <p>So I looked around</p>
+        <p>And I noticed there wasn't a chair</p>
+        <p>I sat on a rug biding my time</p>
+        <p>Drinking her wine</p>
+        <p>We talked until two and then she said</p>
+        <p>"It's time for bed"</p>
+        <p>She told me she worked</p>
+        <p>In the morning and started to laugh</p>
+        <p>I told her I didn't</p>
+        <p>And crawled off to sleep in the bath</p>
+        <p>And when I awoke I was alone</p>
+        <p>This bird had flown</p>
+        <p>So I lit a fire</p>
+        <p>Isn't it good Norwegian wood?</p>
+    </div>
+    <script>
+        const menuEle = document.querySelector('.menu');
+        const offsetTop = menuEle.offsetTop;
+        window.onscroll = function (event) {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+            if (scrollTop > offsetTop) {
+                menuEle.classList.add('menu-fixed');
+            } else {
+                menuEle.classList.remove('menu-fixed');
+            }
+        };
+    </script>
+</body>
+
+</html>
