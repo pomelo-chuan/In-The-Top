@@ -2,6 +2,9 @@
 
 # 页面滑动，元素自动吸顶
 
+## 预览地址
+[in the top](https://pomelo-chuan.github.io/In-The-Top/)
+
 ## 安卓端实现方法
 
 监听滚动，当滑动的距离大于需要吸顶元素距离顶部距离的时候，给需要吸顶的元素增加**position: fixed**属性。
