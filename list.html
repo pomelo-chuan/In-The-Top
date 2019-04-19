@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>List</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        ul {
+            list-style: none;
+            margin-block-start: 0;
+            margin-block-end: 0;
+            padding: 0;
+        }
+
+        .menu {
+            background-color: aqua;
+        }
+
+        .menu-fixed {
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+
+        .sticky {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            left: 0;
+            z-index: 9999;
+        }
+    </style>
+</head>
+
+<body>
+    <ul id='list'></ul>
+</body>
+<script src="./inTheTop.js"></script>
+<script>
+    const listNode = document.querySelector('#list');
+    [...Array(100).keys()].forEach(it => {
+        const liNode = document.createElement('li');
+        liNode.innerText = it;
+        if (it % 5 === 0) {
+            liNode.setAttribute("data-sticky", "true");
+            liNode.className = 'menu';
+        }
+        listNode.append(liNode);
+    });
+    const el = document.getElementsByTagName('li');
+    for (let i = 0; i < el.length; i++) {
+        let node = el[i].getAttribute('data-sticky');
+        if (node) {
+            // inTheTop(el[i]);
+        }
+    }
+    window.onscroll = () => {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+        console.log(scrollTop);
+    };
+</script>
+
+</html>
